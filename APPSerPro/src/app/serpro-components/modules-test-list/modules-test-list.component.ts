@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IcfesModule } from 'src/app/models/module.model';
 
 @Component({
   selector: 'app-modules-test-list',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModulesTestListComponent implements OnInit {
 
-  constructor() { }
+  modules: IcfesModule [];
+
+  constructor() { 
+
+    
+
+  }
 
   ngOnInit(): void {
   }

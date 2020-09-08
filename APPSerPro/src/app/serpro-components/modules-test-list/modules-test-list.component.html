@@ -1,9 +1,11 @@
-<mat-card class="example-card">
-    <mat-card-header>      
-      <mat-card-title>Inglés 1</mat-card-title>
-      <mat-card-subtitle>Ingles basico</mat-card-subtitle>
-    </mat-card-header>    
-    <mat-card-actions>
-      <button mat-raised-button color="primary">TOMAR TEST</button>
-    </mat-card-actions>
-</mat-card>
+<div *ngFor="let module of modules">
+    <mat-card class="example-card"  >
+        <mat-card-header>      
+          <mat-card-title>Inglés 1</mat-card-title>
+          <mat-card-subtitle>Ingles basico</mat-card-subtitle>
+        </mat-card-header>    
+        <mat-card-actions>
+          <button mat-raised-button color="primary">TOMAR TEST</button>
+        </mat-card-actions>
+    </mat-card>    
+</div>

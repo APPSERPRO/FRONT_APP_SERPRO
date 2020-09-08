@@ -1,1 +1,8 @@
-<p>icfes-test works!</p>
+<h1>PRUEBA 01 - MODULO INGLES</h1>
+<!-- PREGUNTA SELECCION MULTIPLE-->
+
+<app-multiple-selection-question *ngIf="currentQuestion.type == 'multiple'" [question]="currentQuestion"></app-multiple-selection-question>
+
+<button mat-button (click)="previousAction ()">ATRAS</button>
+<button mat-button (click)="nextAction ()"> SIGUIENTE</button>
+<mat-progress-bar name="progressBar" mode="determinate" [value]="currentTest.progress" ></mat-progress-bar>
