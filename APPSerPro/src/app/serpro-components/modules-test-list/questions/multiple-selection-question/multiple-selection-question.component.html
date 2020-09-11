@@ -15,7 +15,7 @@
       </div>
       <div>
         <label id="example-radio-group-label">Selecciona la respuesta correcta</label>
-        <br/>
+        <br/> <br/>
         <mat-radio-group
           [(ngModel)]="selectedAnswer">
           <div *ngFor="let answer of question.answers" >
@@ -23,15 +23,10 @@
               {{answer}}
             </mat-radio-button> <br/>
           </div>
-
         <br>
-
-
         </mat-radio-group>
         <div>Su respuesta seleccionada es: {{selectedAnswer}}</div>
       </div>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>ENVIAR</button>
-    </mat-card-actions>
+
   </mat-card>

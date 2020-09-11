@@ -41,6 +41,7 @@ export class IcfesTestComponent implements OnInit {
   listarQuestions(){
     this.api.get(this.apiUrl).subscribe((res:any )=> {
       this.currentTest = new IcfesTest ();
+      this.currentTest.progress = 0;
       for(let item of res){
         this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen));
       }
@@ -51,7 +52,6 @@ export class IcfesTestComponent implements OnInit {
       this.nextAction ();
       console.log(res);
     }, err => {
-
     })
   }
   nextAction  () {
