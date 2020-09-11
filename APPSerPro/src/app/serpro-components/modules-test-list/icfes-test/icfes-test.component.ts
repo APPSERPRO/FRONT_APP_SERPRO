@@ -14,9 +14,12 @@ export class IcfesTestComponent implements OnInit {
   currentTest: IcfesTest;
   questionCount: number;
   progressIncrement: number;
+  testEnded: boolean;
 
   constructor(private questionsService:QuestionsService) {
 
+    this.questionCount = -1;
+    this.loadCurrentTest ();
 
   }
 
@@ -26,9 +29,7 @@ export class IcfesTestComponent implements OnInit {
   loadCurrentTest () {
     this.currentTest = new IcfesTest ();
     this.currentTest.progress = 0;
-    //this.currentTest.questions.push(new Question ('1.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
-    //this.currentTest.questions.push(new Question ('2.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
-
+    this.listarQuestions();
   }
 
   calculateProgressIncrement () {
@@ -36,19 +37,16 @@ export class IcfesTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarQuestions();
   }
   listarQuestions(){
     this.questionsService.getQuestionListByModule(1).subscribe((res:any )=> {
 
-      this.currentTest = new IcfesTest ();
-      this.currentTest.progress = 0;
+
       for(let item of res){
-        this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen));
+        this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen, item.Respuesta));
       }
       console.log(this.currentTest.questions)
-      this.questionCount = -1;
-      //this.loadCurrentTest ();
+
       this.calculateProgressIncrement ();
       this.nextAction ();
       console.log(res);
@@ -56,8 +54,17 @@ export class IcfesTestComponent implements OnInit {
     })
   }
   nextAction  () {
+    if (this.questionCount < this.currentTest.questions.length-1){
     this.currentTest.progress += this.progressIncrement;
     this.currentQuestion = this.currentTest.questions [++this.questionCount];
+    console.log("CurrenQuestion",this.currentQuestion)
+    }
+    else{
+
+      this.currentTest.calculateQtyCorrectQuestions();
+      this.testEnded = true;
+
+    }
   }
 
   previousAction () {

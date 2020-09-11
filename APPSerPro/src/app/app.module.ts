@@ -27,7 +27,7 @@ import { HeaderComponent } from './serpro-components/header/header.component';
 
 //services
 import { QuestionsService } from './services/question.service';
-import { SummaryTestComponent } from './serpro-components/icfes-modules-list/summary-test/summary-test.component'
+import { SummaryTestComponent } from './serpro-components/modules-test-list/summary-test/summary-test.component'
 
 
 

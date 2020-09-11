@@ -19,7 +19,7 @@
         <mat-radio-group
           [(ngModel)]="question.selectedAnswer">
           <div *ngFor="let answer of question.answers" >
-            <mat-radio-button [value]="answer">
+            <mat-radio-button [value]="answer" [disabled]="!isEditable">
               {{answer}}
             </mat-radio-button> <br/>
           </div>
