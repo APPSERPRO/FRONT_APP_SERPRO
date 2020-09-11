@@ -6,9 +6,12 @@ import { IcfesTestComponent } from './serpro-components/modules-test-list/icfes-
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/listaTests', pathMatch : 'full'},
   {path: 'listaModulos', component: IcfesModulesListComponent},
   {path: 'listaTests', component: ModulesTestListComponent},
-  {path: 'test', component: IcfesTestComponent},
+  {path: 'test', component: IcfesTestComponent}
+
+
 ];
 
 @NgModule({

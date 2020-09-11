@@ -8,15 +8,17 @@ import { IcfesModule } from 'src/app/models/module.model';
 })
 export class ModulesTestListComponent implements OnInit {
 
+  panelOpenState = false;
   modules: IcfesModule [];
 
-  constructor() { 
+  constructor() {
 
-    
+
 
   }
 
   ngOnInit(): void {
+
   }
 
 }
