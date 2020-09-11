@@ -7,15 +7,25 @@
       <p>
           {{question.statement}}
       </p>
+      <div *ngIf="question.images.length > 0">
+        <div *ngFor="let item of question.images">
+          <img src='data:image/png;base64,{{item.base64}}'>
+          <h3> fuente : {{item.fuente}}</h3>
+        </div>
+      </div>
       <div>
         <label id="example-radio-group-label">Selecciona la respuesta correcta</label>
         <br/>
         <mat-radio-group
           [(ngModel)]="selectedAnswer">
-          <mat-radio-button *ngFor="let answer of question.answers" [value]="answer">
-            {{answer}}
-          </mat-radio-button>
+          <div *ngFor="let answer of question.answers" >
+            <mat-radio-button [value]="answer">
+              {{answer}}
+            </mat-radio-button> <br/>
+          </div>
+
         <br>
+
 
         </mat-radio-group>
         <div>Su respuesta seleccionada es: {{selectedAnswer}}</div>

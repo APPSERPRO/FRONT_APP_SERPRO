@@ -1,9 +1,14 @@
 <app-header title="Bievenido, MODULO INGLES"></app-header>
 <h1>PRUEBA 01 - MODULO INGLES</h1>
 <!-- PREGUNTA SELECCION MULTIPLE-->
+<div *ngIf="this.currentTest">
+  <app-multiple-selection-question *ngIf="currentQuestion.type == 'multiple'" [question]="currentQuestion" ></app-multiple-selection-question>
 
-<app-multiple-selection-question *ngIf="currentQuestion.type == 'multiple'" [question]="currentQuestion"></app-multiple-selection-question>
+  <button mat-button (click)="previousAction ()">ATRAS</button>
+  <button mat-button (click)="nextAction ()"> SIGUIENTE</button>
+  <mat-progress-bar name="progressBar" mode="determinate" [value]="currentTest.progress" ></mat-progress-bar>
+</div>
+<div  *ngIf="!this.currentTest">
+  <mat-spinner></mat-spinner>
+</div>
 
-<button mat-button (click)="previousAction ()">ATRAS</button>
-<button mat-button (click)="nextAction ()"> SIGUIENTE</button>
-<mat-progress-bar name="progressBar" mode="determinate" [value]="currentTest.progress" ></mat-progress-bar>

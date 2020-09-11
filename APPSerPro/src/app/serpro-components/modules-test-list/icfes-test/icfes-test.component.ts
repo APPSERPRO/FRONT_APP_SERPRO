@@ -16,10 +16,7 @@ export class IcfesTestComponent implements OnInit {
   progressIncrement: number;
 
   constructor(private api:ApiService) {
-    this.questionCount = -1;
-    this.loadCurrentTest ();
-    this.calculateProgressIncrement ();
-    this.nextAction ();
+
 
   }
 
@@ -29,8 +26,8 @@ export class IcfesTestComponent implements OnInit {
   loadCurrentTest () {
     this.currentTest = new IcfesTest ();
     this.currentTest.progress = 0;
-    this.currentTest.questions.push(new Question ('1.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
-    this.currentTest.questions.push(new Question ('2.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
+    //this.currentTest.questions.push(new Question ('1.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
+    //this.currentTest.questions.push(new Question ('2.The Abstract Class defines a template method that contains a skeleton of some algorithm', ['Hola', 'Chao', 'Adios'], 'multiple'));
 
   }
 
@@ -39,9 +36,19 @@ export class IcfesTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.listarQuestions();
   }
   listarQuestions(){
-    this.api.get(this.apiUrl).subscribe(res => {
+    this.api.get(this.apiUrl).subscribe((res:any )=> {
+      this.currentTest = new IcfesTest ();
+      for(let item of res){
+        this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen));
+      }
+      console.log(this.currentTest.questions)
+      this.questionCount = -1;
+      //this.loadCurrentTest ();
+      this.calculateProgressIncrement ();
+      this.nextAction ();
       console.log(res);
     }, err => {
 

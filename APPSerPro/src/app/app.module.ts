@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 //Componente Header
 import { HeaderComponent } from './serpro-components/header/header.component';
 
@@ -48,7 +49,8 @@ import { ApiService } from './services/api.service'
     FormsModule,
     MatExpansionModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

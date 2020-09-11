@@ -10,6 +10,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public get (url:String, modulo?:String){
-    return this.http.get(`${this.rutaAPi}/${url}`);
+    return this.http.get(`${this.rutaAPi}/${url}/2`);
   }
 }
