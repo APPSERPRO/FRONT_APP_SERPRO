@@ -11,7 +11,7 @@ export class MultipleSelectionQuestionComponent implements OnInit {
   @Input ()
   question: Question;
 
-  selectedAnswer: string;
+
 
 
   constructor() { }

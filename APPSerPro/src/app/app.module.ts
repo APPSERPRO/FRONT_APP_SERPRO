@@ -26,7 +26,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { HeaderComponent } from './serpro-components/header/header.component';
 
 //services
-import { ApiService } from './services/api.service'
+import { QuestionsService } from './services/question.service';
+import { SummaryTestComponent } from './serpro-components/icfes-modules-list/summary-test/summary-test.component'
 
 
 
@@ -37,7 +38,8 @@ import { ApiService } from './services/api.service'
     ModulesTestListComponent,
     IcfesTestComponent,
     MultipleSelectionQuestionComponent,
-    HeaderComponent
+    HeaderComponent,
+    SummaryTestComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import { ApiService } from './services/api.service'
     MatProgressSpinnerModule,
     MatTabsModule
   ],
-  providers: [ApiService],
+  providers: [QuestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

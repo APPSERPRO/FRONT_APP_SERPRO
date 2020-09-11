@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from 'src/app/models/question.model';
 import { IcfesTest } from 'src/app/models/test.model';
-import { ApiService } from '../../../services/api.service';
+import { QuestionsService } from '../../../services/question.service';
 
 @Component({
   selector: 'app-icfes-test',
@@ -9,13 +9,13 @@ import { ApiService } from '../../../services/api.service';
   styleUrls: ['./icfes-test.component.css']
 })
 export class IcfesTestComponent implements OnInit {
-  private apiUrl = 'question';
+
   currentQuestion: Question;
   currentTest: IcfesTest;
   questionCount: number;
   progressIncrement: number;
 
-  constructor(private api:ApiService) {
+  constructor(private questionsService:QuestionsService) {
 
 
   }
@@ -39,7 +39,8 @@ export class IcfesTestComponent implements OnInit {
     this.listarQuestions();
   }
   listarQuestions(){
-    this.api.get(this.apiUrl).subscribe((res:any )=> {
+    this.questionsService.getQuestionListByModule(1).subscribe((res:any )=> {
+
       this.currentTest = new IcfesTest ();
       this.currentTest.progress = 0;
       for(let item of res){
