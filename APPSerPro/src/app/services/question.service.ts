@@ -7,12 +7,13 @@ import {environment} from "../../environments/environment";
 })
 export class QuestionsService {
 
-  private questionListEnpoint = 'question';
-
-
   constructor(private http: HttpClient) { }
 
-  public getQuestionListByModule (modulo: number){
-    return this.http.get(`${environment.urlQuestionApi}/${this.questionListEnpoint}/${modulo}`);
+  public getId (endpoint: string ,modulo: number){
+    return this.http.get(`${environment.urlQuestionApi}/${endpoint}/${modulo}`);
+  }
+
+  public get (endpoint: string){
+    return this.http.get(`${environment.urlQuestionApi}/${endpoint}`);
   }
 }

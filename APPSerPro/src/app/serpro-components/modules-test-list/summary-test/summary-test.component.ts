@@ -7,21 +7,15 @@ import {IcfesTest} from "../../../models/test.model";
   styleUrls: ['./summary-test.component.css']
 })
 export class SummaryTestComponent implements OnInit {
-
-
   @Input()
   icfesTest: IcfesTest;
 
-
-
   constructor() {
-
   }
 
   ngOnInit(): void {
     this.icfesTest.calculateQtyCorrectQuestions();
     console.log("Icfes test: -->",this.icfesTest);
-
   }
 
 }

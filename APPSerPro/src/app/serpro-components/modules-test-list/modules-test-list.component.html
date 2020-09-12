@@ -3,58 +3,30 @@
 
         <mat-card-actions>
           <mat-accordion>
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Inglés
-                </mat-panel-title>
-                <mat-panel-description>
-                  Área de conocimiento
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <a routerLink="/test" >1. Prueba Inglés </a> <br>
-              <a href="">Prueba Inglés Con Preguntas Aleatorieas</a>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <div *ngFor="let module of modules">
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{module.area_conocimiento}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Área de conocimiento
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <a routerLink="/test" > 1. Prueba {{module.area_conocimiento | lowercase }} </a> <br><br>
+                <a routerLink="/test" > 2. Prueba {{module.area_conocimiento | lowercase }} Con Preguntas Aleatorieas</a>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
 
-            </mat-expansion-panel>
-
-
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Matemáticas
-                </mat-panel-title>
-                <mat-panel-description>
-                  Área de conocimiento
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <a routerLink="">1. Prueba Matemáticas</a><br>
-              <a href="">Prueba Matemáticas Con Preguntas Aleatorieas</a>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
-
-            </mat-expansion-panel>
+              </mat-expansion-panel>
+            </div>
 
 
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Lecto Escritura
-                </mat-panel-title>
-                <mat-panel-description>
-                  Área de conocimiento
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <a href="">1. Prueba Lecto Escritura</a><br>
-              <a href="">Prueba Lecto Escritura Con Preguntas Aleatorieas</a>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
 
-            </mat-expansion-panel>
+
+
+
           </mat-accordion>
         </mat-card-actions>
     </mat-card>

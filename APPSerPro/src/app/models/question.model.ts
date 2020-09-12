@@ -8,13 +8,14 @@ export class Question {
     feedback : string;
     correctAnswer : string;
 
-    constructor (statement: string, answers: string [], type: string, images: any, correctAnswer:string){
+    constructor (statement: string, answers: string [], type: string, images: any, correctAnswer:string, feedback:string){
         this.statement = statement;
         this.answers = answers;
         this.type = type;
         this.images = images;
         this.selectedAnswer = null;
         this.correctAnswer = correctAnswer;
+        this.feedback = feedback;
     }
 
     checkAnswer(): boolean{

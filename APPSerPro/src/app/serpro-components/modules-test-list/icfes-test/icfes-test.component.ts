@@ -15,7 +15,7 @@ export class IcfesTestComponent implements OnInit {
   questionCount: number;
   progressIncrement: number;
   testEnded: boolean;
-
+  endPoint = 'question'
   constructor(private questionsService:QuestionsService) {
 
     this.questionCount = -1;
@@ -39,11 +39,11 @@ export class IcfesTestComponent implements OnInit {
   ngOnInit(): void {
   }
   listarQuestions(){
-    this.questionsService.getQuestionListByModule(1).subscribe((res:any )=> {
+    this.questionsService.getId(this.endPoint,1).subscribe((res:any )=> {
 
 
       for(let item of res){
-        this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen, item.Respuesta));
+        this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen, item.Respuesta,item.Justificacion));
       }
       console.log(this.currentTest.questions)
 
