@@ -27,7 +27,8 @@ import { HeaderComponent } from './serpro-components/header/header.component';
 
 //services
 import { QuestionsService } from './services/question.service';
-import { SummaryTestComponent } from './serpro-components/modules-test-list/summary-test/summary-test.component'
+import { SummaryTestComponent } from './serpro-components/modules-test-list/summary-test/summary-test.component';
+import { LoginComponent } from './login/login.component'
 
 
 
@@ -39,7 +40,8 @@ import { SummaryTestComponent } from './serpro-components/modules-test-list/summ
     IcfesTestComponent,
     MultipleSelectionQuestionComponent,
     HeaderComponent,
-    SummaryTestComponent
+    SummaryTestComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
+<body>
+
+
 <app-header title="Bievenido, MODULO INGLES"></app-header>
 
 <mat-card class="example-card" id="center-card">
@@ -8,14 +11,16 @@
 
   <app-multiple-selection-question *ngIf="currentQuestion.type == 'multiple'" [question]="currentQuestion" ></app-multiple-selection-question>
 
-  <button mat-button (click)="previousAction ()">ATRAS</button>
-  <button mat-button (click)="nextAction ()"> SIGUIENTE</button>
 
+  <br>
+  <button mat-button (click)="previousAction ()" class="mat-raised-button" color="primary" >ATRAS  </button>
+  <button mat-button (click)="nextAction ()" class="mat-raised-button" color="accent"> {{nextAndSend}}</button>
+  <br><br>
   <mat-progress-bar name="progressBar" mode="determinate" [value]="currentTest.progress" ></mat-progress-bar>
 
 </div>
 
-  <div  *ngIf="this.currentTest.questions.length == 0">
+  <div *ngIf="this.currentTest.questions.length < 1 || this.currentTest.questions.length == null">
 
     <mat-spinner></mat-spinner>
 
@@ -29,3 +34,4 @@
 
 
 </mat-card>
+</body>

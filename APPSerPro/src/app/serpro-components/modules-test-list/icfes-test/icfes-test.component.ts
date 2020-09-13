@@ -15,13 +15,18 @@ export class IcfesTestComponent implements OnInit {
   questionCount: number;
   progressIncrement: number;
   testEnded: boolean;
-  endPoint = 'question'
+  endPoint = 'question';
+  nextAndSend : string;
+
   constructor(private questionsService:QuestionsService) {
+
 
     this.questionCount = -1;
     this.loadCurrentTest ();
+    this.nextAndSend = 'Siguiente';
 
   }
+
 
   /**
    * TODO: Must be replaced by a service call or an input component variable
@@ -47,6 +52,9 @@ export class IcfesTestComponent implements OnInit {
       }
       console.log("Esto que es?  ",this.currentTest.questions)
 
+
+      console.log("Longitud",this.currentTest.questions.length );
+
       this.calculateProgressIncrement ();
       this.nextAction ();
       console.log("Consulta de DB  -->",res);
@@ -54,15 +62,20 @@ export class IcfesTestComponent implements OnInit {
     })
   }
   nextAction  () {
+    if(this.questionCount == this.currentTest.questions.length-2){
+      this.nextAndSend ="ENVIAR";
+    }
     if (this.questionCount < this.currentTest.questions.length-1){
     this.currentTest.progress += this.progressIncrement;
     this.currentQuestion = this.currentTest.questions [++this.questionCount];
     console.log("CurrenQuestion",this.currentQuestion)
+
     }
     else{
 
       this.currentTest.calculateQtyCorrectQuestions();
       this.testEnded = true;
+
 
     }
   }

@@ -11,6 +11,7 @@ export class IcfesTest {
     questions: Question[];
     qtyCorrectQuestions : number;
 
+
     calculateQtyCorrectQuestions() {
       this.qtyCorrectQuestions = 0;
       this.questions.forEach(

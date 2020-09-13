@@ -4,10 +4,12 @@ import { IcfesModulesListComponent } from './serpro-components/icfes-modules-lis
 import { ModulesTestListComponent } from './serpro-components/modules-test-list/modules-test-list.component';
 import { IcfesTestComponent } from './serpro-components/modules-test-list/icfes-test/icfes-test.component';
 import {SummaryTestComponent} from "./serpro-components/modules-test-list/summary-test/summary-test.component";
+import {LoginComponent} from "./login/login.component";
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/listaTests', pathMatch : 'full'},
+  {path: 'login' , component: LoginComponent},
   {path: 'listaModulos', component: IcfesModulesListComponent},
   {path: 'listaTests', component: ModulesTestListComponent},
   {path: 'test', component: IcfesTestComponent,
