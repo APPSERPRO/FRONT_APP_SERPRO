@@ -45,11 +45,11 @@ export class IcfesTestComponent implements OnInit {
       for(let item of res){
         this.currentTest.questions.push(new Question(item.Enunciado,item.Opciones,"multiple", item.Imagen, item.Respuesta,item.Justificacion));
       }
-      console.log(this.currentTest.questions)
+      console.log("Esto que es?  ",this.currentTest.questions)
 
       this.calculateProgressIncrement ();
       this.nextAction ();
-      console.log(res);
+      console.log("Consulta de DB  -->",res);
     }, err => {
     })
   }

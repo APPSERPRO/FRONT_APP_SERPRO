@@ -15,6 +15,7 @@ export class MultipleSelectionQuestionComponent implements OnInit {
   isEditable: boolean;
 
 
+
   constructor() {
     if (this.isEditable != true) {
       this.isEditable = true;
