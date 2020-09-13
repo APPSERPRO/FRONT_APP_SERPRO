@@ -9,12 +9,13 @@ import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/listaTests', pathMatch : 'full'},
-  {path: 'login' , component: LoginComponent},
+
   {path: 'listaModulos', component: IcfesModulesListComponent},
   {path: 'listaTests', component: ModulesTestListComponent},
   {path: 'test', component: IcfesTestComponent,
     children: [ {path: 'SummaryTest', component: SummaryTestComponent}]
   },
+  {path: 'login' , component: LoginComponent},
 ];
 
 @NgModule({
