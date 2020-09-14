@@ -1,11 +1,29 @@
-<div *ngFor="let module of modules">
-    <mat-card class="example-card"  >
-        <mat-card-header>      
-          <mat-card-title>Inglés 1</mat-card-title>
-          <mat-card-subtitle>Ingles basico</mat-card-subtitle>
-        </mat-card-header>    
-        <mat-card-actions>
-          <button mat-raised-button color="primary">TOMAR TEST</button>
-        </mat-card-actions>
-    </mat-card>    
-</div>
+<body style="background-image: url(../../../assets/images/fondo.jpg)">
+<app-header title="Bievenido, Escoja un área de conocimiento"></app-header>
+<mat-card class="example-card" id="center-card">
+  <mat-card-actions>
+    <mat-accordion>
+      <div *ngFor="let module of modules">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{module.area_conocimiento}}
+            </mat-panel-title>
+            <mat-panel-description align="right">
+              Área de conocimiento
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a routerLink="/test" > 1. Prueba {{module.area_conocimiento | lowercase }} </a> <br><br>
+          <a routerLink="/test" > 2. Prueba {{module.area_conocimiento | lowercase }} Con Preguntas Aleatorieas</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+
+        </mat-expansion-panel>
+      </div>
+
+    </mat-accordion>
+  </mat-card-actions>
+</mat-card>
+
+</body>

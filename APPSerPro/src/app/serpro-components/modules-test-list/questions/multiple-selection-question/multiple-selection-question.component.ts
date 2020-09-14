@@ -11,12 +11,17 @@ export class MultipleSelectionQuestionComponent implements OnInit {
   @Input ()
   question: Question;
 
-  selectedAnswer: string;
+  @Input()
+  isEditable: boolean;
 
 
-  constructor() { }
 
+  constructor() {
+    if (this.isEditable != true) {
+      this.isEditable = true;
+    }
+
+  }
   ngOnInit(): void {
   }
-
 }
