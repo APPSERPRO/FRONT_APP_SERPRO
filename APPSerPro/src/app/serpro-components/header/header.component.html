@@ -1,5 +1,19 @@
-<div align="center">
-  <img src="../../../assets/images/logopoli.png" width="300" height="200">
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="justify-content: center;">    
+    <span> {{title}} </span>
+  </mat-toolbar-row>
 
-<h1 align="center" style="color: black">{{title}}</h1>
+  <mat-toolbar-row>
+    <span>{{ pageTitle }}</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon home-icon"
+      aria-label="Home"
+      [routerLink]="'/listaModulos'"
+    >
+      <mat-icon >home</mat-icon>
+    </button>
+    
+  </mat-toolbar-row>
+</mat-toolbar>

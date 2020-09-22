@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { UserSettingsVariablesService } from 'src/app/services/user-settings-variables.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string;
-  constructor() { }
+  pageTitle: string;
+  constructor(userSettingsVariablesService: UserSettingsVariablesService) { 
+    this.pageTitle = userSettingsVariablesService.getPageTitle ();
+  }
 
   ngOnInit(): void {
   }
