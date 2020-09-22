@@ -1,25 +1,25 @@
+import { Answer } from './answer.model';
+
 export class Question {
-
+    module: number;
     statement: string;
-    type: string;
-    answers: string [];
-    images: any;
-    selectedAnswer: string;
+    questionType: string;
+    answers: Answer [];
+    selectedAnswer: Answer;
     feedback : string;
-    correctAnswer : string;
+    
 
-    constructor (statement: string, answers: string [], type: string, images: any, correctAnswer:string, feedback:string){
+    constructor (statement: string, answers: Answer [], questionType: string, feedback:string){
         this.statement = statement;
         this.answers = answers;
-        this.type = type;
-        this.images = images;
+        this.questionType = questionType;
         this.selectedAnswer = null;
-        this.correctAnswer = correctAnswer;
         this.feedback = feedback;
     }
 
     checkAnswer(): boolean{
-    return this.selectedAnswer === this.correctAnswer;
+        // TODO: Implementar el chequeo del valor
+        return false;
     }
 
 
