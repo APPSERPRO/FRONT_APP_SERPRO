@@ -1,16 +1,8 @@
-<body>
-
-
-<app-header title="Bievenido, MODULO INGLES"></app-header>
-
 <mat-card class="example-card" id="center-card">
 
-<h1>PRUEBA 01 - MODULO INGLES</h1>
 <!-- PREGUNTA SELECCION MULTIPLE-->
-<div *ngIf="this.currentTest && !testEnded" >
-
-  <app-multiple-selection-question *ngIf="currentQuestion.type == 'multiple'" [question]="currentQuestion" ></app-multiple-selection-question>
-
+<div *ngIf="currentTest && !testEnded && currentQuestion" >
+  <app-multiple-selection-question *ngIf="currentQuestion.questionType == 'multiple-selection'" [question]="currentQuestion" ></app-multiple-selection-question>
 
   <br>
   <button mat-button (click)="previousAction ()" class="mat-raised-button" color="primary" >ATRAS  </button>
@@ -32,6 +24,5 @@
 
   </div>
 
-
 </mat-card>
-</body>
+

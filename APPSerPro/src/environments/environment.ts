@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlQuestionApi: 'http://localhost:8082'
+  urlQuestionApi: 'https://serproapi.herokuapp.com',
+  qtyRamdomQuestions: 10
 };
 
 /*
@@ -15,3 +16,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// Alfonso Javier Llerena

@@ -10,24 +10,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {  RouterModule} from '@angular/router';
 import { IcfesModulesListComponent } from './serpro-components/icfes-modules-list/icfes-modules-list.component';
-import { ModulesTestListComponent } from './serpro-components/modules-test-list/modules-test-list.component';
-import { IcfesTestComponent } from './serpro-components/modules-test-list/icfes-test/icfes-test.component';
-import { MultipleSelectionQuestionComponent } from './serpro-components/modules-test-list/questions/multiple-selection-question/multiple-selection-question.component';
+import { TestListComponent } from './serpro-components/modules-test/test-list.component';
+import { IcfesTestComponent } from './serpro-components/modules-test/icfes-test/icfes-test.component';
+import { MultipleSelectionQuestionComponent } from './serpro-components/modules-test/questions/multiple-selection-question/multiple-selection-question.component';
 
 // MATERIAL COMPONENTS
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
+
 //Componente Header
 import { HeaderComponent } from './serpro-components/header/header.component';
 
 //services
 import { QuestionsService } from './services/question.service';
-import { SummaryTestComponent } from './serpro-components/modules-test-list/summary-test/summary-test.component';
+import { SummaryTestComponent } from './serpro-components/modules-test/summary-test/summary-test.component';
 import { LoginComponent } from './login/login.component'
 
 
@@ -36,7 +39,7 @@ import { LoginComponent } from './login/login.component'
   declarations: [
     AppComponent,
     IcfesModulesListComponent,
-    ModulesTestListComponent,
+    TestListComponent,
     IcfesTestComponent,
     MultipleSelectionQuestionComponent,
     HeaderComponent,
@@ -52,11 +55,12 @@ import { LoginComponent } from './login/login.component'
     MatProgressBarModule,
     MatRadioModule,
     FormsModule,
-    MatExpansionModule,
     RouterModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [QuestionsService],
   bootstrap: [AppComponent]
