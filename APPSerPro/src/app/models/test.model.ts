@@ -15,10 +15,9 @@ export class IcfesTest {
     calculateQtyCorrectQuestions() {
       this.qtyCorrectQuestions = 0;
       this.questions.forEach(
-        (question) => {
-          if(question.checkAnswer()){
+        (question) => {          
+          if(question.checkAnswerPoints() > 0){
             this.qtyCorrectQuestions +=1;
-            console.log("Calculate -->" ,this.qtyCorrectQuestions)
           }
         }
       )

@@ -22,8 +22,8 @@ export class QuestionsService {
   
   public getTestById (testId: string){
     // TODO: UPDATE WHEN BACK SERVICE IS FIXED
-    //return this.http.get(`${environment.urlQuestionApi}/icfesTest/${testId}`);
-    return this.http.get <IcfesTest[]> (`${environment.urlQuestionApi}/icfesTest/`);
+    return this.http.get(`${environment.urlQuestionApi}/icfesTest/${testId}`);
+    //return this.http.get <IcfesTest[]> (`${environment.urlQuestionApi}/icfesTest/`);
   }
 
   public getRandomQuestionsByModuleId (moduleId: string){

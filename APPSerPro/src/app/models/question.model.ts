@@ -1,12 +1,14 @@
 import { Answer } from './answer.model';
 
 export class Question {
+    
     module: number;
     statement: string;
     questionType: string;
     answers: Answer [];
-    selectedAnswer: Answer;
+    selectedAnswer: Answer[];
     feedback : string;
+    earnedPoints: number;
     
 
     constructor (statement: string, answers: Answer [], questionType: string, feedback:string){
@@ -15,12 +17,20 @@ export class Question {
         this.questionType = questionType;
         this.selectedAnswer = null;
         this.feedback = feedback;
+        this.earnedPoints = 0;
     }
 
-    checkAnswer(): boolean{
-        // TODO: Implementar el chequeo del valor
-        return false;
-    }
+    checkAnswerPoints(): number{
 
+        this.earnedPoints = this.selectedAnswer.reduce (
+            (previousAnswer, answer)=>{
+                return {
+                    statement: 'calificacion',
+                    grade: previousAnswer.grade + answer.grade 
+                };
+            }).grade;
+         console.log (this.earnedPoints);
+         return this.earnedPoints;
+    }
 
 }

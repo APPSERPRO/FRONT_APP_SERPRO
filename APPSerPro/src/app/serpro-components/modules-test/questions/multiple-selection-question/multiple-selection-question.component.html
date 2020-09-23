@@ -26,8 +26,8 @@
         </div>
         <br />
       </mat-radio-group>
-      <div *ngIf="question.selectedAnswer">
-        Su respuesta seleccionada es: {{ question.selectedAnswer.statement }}
+      <div *ngIf="question.selectedAnswer[0]">
+        Su respuesta seleccionada es: {{ question.selectedAnswer[0].statement }}
       </div>
     </div>
   </mat-card-content>
