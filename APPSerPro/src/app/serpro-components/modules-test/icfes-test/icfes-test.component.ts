@@ -54,7 +54,7 @@ export class IcfesTestComponent implements OnInit {
     request.subscribe(
       (res: any) => {
         console.log(res);
-        for (let item of res[0].questions) {
+        for (let item of res.questions) {
           console.log ('item: ', item);
           const objTmp = new Question(
             item.statement,
@@ -66,14 +66,9 @@ export class IcfesTestComponent implements OnInit {
           this.currentTest.questions.push(
             objTmp  
           );
-        }
-        console.log('Esto que es?  ', this.currentTest.questions);
-
-        console.log('Longitud', this.currentTest.questions.length);
-
+        }        
         this.calculateProgressIncrement();
-        this.nextAction();
-        console.log('Consulta de DB  -->', res);
+        this.nextAction();        
       },
       (err) => {},
     );

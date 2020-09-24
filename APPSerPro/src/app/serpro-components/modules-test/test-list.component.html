@@ -3,10 +3,13 @@
   <div *ngFor="let test of tests | async; let nroPrueba = index;">
     <mat-card>
       <mat-card-header>
-         <mat-card-title>Prueba {{nroPrueba + 1}} </mat-card-title>
+         <mat-card-title>{{ test.title }} </mat-card-title>
       </mat-card-header>
+      <mat-card-content>
+          {{ test.description }}
+      </mat-card-content>
       <mat-card-actions style="text-align: right">
-        <button mat-raised-button color="primary" [routerLink]="'/test/' + test.id + '/' + moduleId">
+        <button mat-raised-button color="primary" [routerLink]="'/test/' + test._id + '/' + moduleId">
           Tomar el test
         </button>
       </mat-card-actions>

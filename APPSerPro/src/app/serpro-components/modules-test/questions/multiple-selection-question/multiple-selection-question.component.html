@@ -5,17 +5,17 @@
   </mat-card-header>
   <mat-card-content>
     <div [innerHtml]="question.statement"></div>
-
+    <hr>
     <div>
-      <label *ngIf="isEditable" id="example-radio-group-label"
-        >Selecciona la respuesta correcta:</label
-      >
+      <label *ngIf="isEditable" id="example-radio-group-label"> 
+        Selecciona la respuesta correcta:
+      </label>
       <br />
       <br />
       <mat-radio-group [(ngModel)]="question.selectedAnswer[0]">
         <div *ngFor="let answer of question.answers">
           <mat-radio-button [value]="answer" [disabled]="!isEditable">
-            {{ answer.statement }}
+            <div [innerHtml]="answer.statement"></div>
           </mat-radio-button>
           <br />
         </div>
@@ -27,7 +27,8 @@
         <br />
       </mat-radio-group>
       <div *ngIf="question.selectedAnswer[0]">
-        Su respuesta seleccionada es: {{ question.selectedAnswer[0].statement }}
+        Su respuesta seleccionada es: 
+        <p [innerHtml]="question.selectedAnswer[0].statement"></p> 
       </div>
     </div>
   </mat-card-content>

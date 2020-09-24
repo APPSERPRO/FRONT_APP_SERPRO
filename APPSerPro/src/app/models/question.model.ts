@@ -15,7 +15,7 @@ export class Question {
         this.statement = statement;
         this.answers = answers;
         this.questionType = questionType;
-        this.selectedAnswer = null;
+        this.selectedAnswer = [];
         this.feedback = feedback;
         this.earnedPoints = 0;
     }

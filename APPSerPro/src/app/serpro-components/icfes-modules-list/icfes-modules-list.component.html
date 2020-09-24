@@ -1,3 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="justify-content: center;">    
+    <span> LISTA DE MODULOS </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <mat-card class="parent-card" id="center-card">
   <mat-card-content>
     <div *ngFor="let module of modules | async">
@@ -13,7 +19,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions style="text-align: right;">            
-          <button  mat-raised-button color="primary" [routerLink]="'/listaTests/' + module.icfesModule">Abrir</button>
+          <button  mat-raised-button color="primary" [routerLink]="'/listaTests/' + module._id">Abrir</button>
         </mat-card-actions>
       </mat-card>
       <br>

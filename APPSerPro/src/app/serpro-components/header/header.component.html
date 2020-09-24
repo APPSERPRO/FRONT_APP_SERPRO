@@ -1,19 +1,16 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row style="justify-content: center;">    
-    <span> {{title}} </span>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>{{ pageTitle }}</span>
-    <span class="example-spacer"></span>
+  <mat-toolbar-row >    
+    
     <button
       mat-icon-button
       class="example-icon home-icon"
       aria-label="Home"
       [routerLink]="'/listaModulos'"
+      style="justify-self: left;"
     >
       <mat-icon >home</mat-icon>
     </button>
-    
+    <span style="justify-self: center;"> {{title}} </span>
   </mat-toolbar-row>
+
 </mat-toolbar>
