@@ -17,6 +17,7 @@ export class IcfesTestComponent implements OnInit {
   testEnded: boolean;
   endPoint = 'question';
   nextAndSend: string;
+  
 
   constructor(
     private questionsService: QuestionsService,
