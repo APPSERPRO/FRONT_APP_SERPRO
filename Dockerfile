@@ -15,6 +15,6 @@ FROM nginx:1.19.3
 
 COPY --from=0 /usr/src/AppSerpro/dist/APPSerPro /usr/share/nginx/html
 
-EXPOSE 8082
+EXPOSE 80
 
 # CMD ["npm", "start"]
