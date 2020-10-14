@@ -17,7 +17,6 @@ export class QuestionsService {
   }
 
   public getTestsByModuleId (moduleId): Observable<IcfesTest[]> {
-    console.log (`${environment.urlQuestionApi}/icfesTest/moduleId/${moduleId}`);
     return this.http.get <IcfesTest[]> (`${environment.urlQuestionApi}/icfesTest/moduleId/${moduleId}`);
   }
   

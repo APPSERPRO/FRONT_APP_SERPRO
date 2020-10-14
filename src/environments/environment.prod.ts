@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  urlQuestionApi: 'https://serproapi.herokuapp.com',
+  urlQuestionApi:  window["env"]["apiUrl"] || "default",
   qtyRamdomQuestions: 10
 };
