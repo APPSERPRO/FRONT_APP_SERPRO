@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IcfesTest} from "../../../models/test.model";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-summary-test',
@@ -9,13 +10,18 @@ import {IcfesTest} from "../../../models/test.model";
 export class SummaryTestComponent implements OnInit {
   @Input()
   icfesTest: IcfesTest;
+  testId: String;
+  
+  constructor(private route: ActivatedRoute) {
+    this.loadPreviousAddress();
+  }
 
-  constructor() {
+  async loadPreviousAddress(){
+    this.testId= await this.route.snapshot.params.moduleId;
   }
 
   ngOnInit(): void {
     this.icfesTest.calculateQtyCorrectQuestions();
-    console.log("Icfes test: -->",this.icfesTest);
   }
 
 }
