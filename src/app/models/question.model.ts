@@ -29,7 +29,6 @@ export class Question {
                     grade: previousAnswer.grade + answer.grade 
                 };
             }).grade;
-         console.log (this.earnedPoints);
          return this.earnedPoints;
     }
 

@@ -54,16 +54,13 @@ export class IcfesTestComponent implements OnInit {
     }     
     request.subscribe(
       (res: any) => {
-        console.log(res);
         for (let item of res.questions) {
-          console.log ('item: ', item);
           const objTmp = new Question(
             item.statement,
             item.answers,
             item.questionType,
             item.feedback
           );
-          console.log ('objtmp: ',objTmp , item);
           this.currentTest.questions.push(
             objTmp  
           );
@@ -81,7 +78,6 @@ export class IcfesTestComponent implements OnInit {
     if (this.questionCount < this.currentTest.questions.length - 1) {
       this.currentTest.progress += this.progressIncrement;
       this.currentQuestion = this.currentTest.questions[++this.questionCount];
-      console.log('CurrenQuestion', this.currentQuestion);
     } else {
       this.currentTest.calculateQtyCorrectQuestions();
       this.testEnded = true;
