@@ -1,4 +1,9 @@
-<mat-card class="example-card" id="center-card">
+<mat-card 
+  [ngClass]="{
+    'greenCard': question.earnedPoints == 100 && isEditable === false,
+    'yellowCard': question.earnedPoints < 100 && question.earnedPoints > 0 && isEditable === false,
+    'redCard':  question.earnedPoints <= 0 && isEditable === false
+  }" id="center-card">
   <mat-card-header>
     <mat-card-title>Pregunta</mat-card-title>
     <mat-card-subtitle>Seleccion multiple</mat-card-subtitle>
