@@ -1,3 +1,4 @@
+<br>
 <mat-card 
   [ngClass]="{
     'greenCard': question.earnedPoints == 100 && isEditable === false,
@@ -6,7 +7,7 @@
   }" id="center-card">
   <mat-card-header>
     <mat-card-title>Pregunta</mat-card-title>
-    <mat-card-subtitle>Seleccion multiple</mat-card-subtitle>
+    <mat-card-subtitle>Pregunta de seleccion multiple</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div [innerHtml]="question.statement"></div>
@@ -31,10 +32,11 @@
         </div>
         <br />
       </mat-radio-group>
-      <div *ngIf="question.selectedAnswer[0]">
+      <div class="selectedAnswer" *ngIf="question.selectedAnswer[0]">
         Su respuesta seleccionada es: 
         <p [innerHtml]="question.selectedAnswer[0].statement"></p> 
       </div>
     </div>
   </mat-card-content>
 </mat-card>
+<br>
