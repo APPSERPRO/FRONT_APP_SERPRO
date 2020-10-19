@@ -17,6 +17,7 @@ export class IcfesTestComponent implements OnInit {
   testEnded: boolean;
   endPoint = 'question';
   nextAndSend: string;
+  alert: boolean;
   
 
   constructor(
@@ -79,13 +80,28 @@ export class IcfesTestComponent implements OnInit {
       this.currentTest.progress += this.progressIncrement;
       this.currentQuestion = this.currentTest.questions[++this.questionCount];
     } else {
-      this.currentTest.calculateQtyCorrectQuestions();
-      this.testEnded = true;
+      if(this.verifyAnswers()){
+        this.currentTest.calculateQtyCorrectQuestions();
+        this.testEnded = true;
+      }else {
+        this.alert = true;
+      }
     }
   }
 
   previousAction() {
     this.currentTest.progress -= this.progressIncrement;
     this.currentQuestion = this.currentTest.questions[--this.questionCount];
+    this.alert = false;
+  }
+
+  verifyAnswers(): boolean{
+    let accept = true;
+    this.currentTest.questions.forEach(element => {
+      if(element.selectedAnswer.length === 0){
+        accept = false;
+      }
+    });
+    return accept;
   }
 }

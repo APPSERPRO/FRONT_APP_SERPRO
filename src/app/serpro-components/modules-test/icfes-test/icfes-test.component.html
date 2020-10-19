@@ -11,6 +11,10 @@
     <button mat-button (click)="nextAction ()" class="mat-raised-button" color="accent"> {{nextAndSend}}</button>
     <br><br>
     <mat-progress-bar name="progressBar" mode="determinate" [value]="currentTest.progress" ></mat-progress-bar>
+    <br><br>
+    <div class="alert" *ngIf="alert">
+      <p>¡Olvidaste responder alguna pregunta! - Vuelve y revisa</p>
+    </div>
   </div>
 
   <div *ngIf="this.currentTest.questions.length < 1 || this.currentTest.questions.length == null">
